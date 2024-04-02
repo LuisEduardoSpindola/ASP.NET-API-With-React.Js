@@ -1,61 +1,31 @@
+/* App.css */
+
 .App {
-  text-align: center;
+  text-align: center; /* Centralizar o conteúdo */
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  display: flex; /* Utilizar flexbox para alinhar os elementos lado a lado */
+  align-items: center; /* Alinhar os itens verticalmente ao centro */
+  justify-content: space-between; /* Distribuir os elementos uniformemente ao longo do espaço disponível */
+  padding: 20px; /* Adicionar algum espaçamento interno para o header */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.logo-img {
+  max-width: 250px; /* Definir a largura máxima da logo */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+
+.light {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.dark {
+  background-color: rgb(38, 35, 56);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Table */
-
-table {
-  width: 80%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-th {
-  background-color: #282c34;
-  color: white;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
 }

@@ -1,55 +1,33 @@
+// App.js
 import React, { useState, useEffect } from 'react';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import { Modal, ModalBody, ModalFooter, ModalHeader, Table } from 'reactstrap';
-import logoCadastro from './assets/cadastro.png';
+import Logo from './assets/Logo/Logo.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import HomePage from './Home/Home';
+import ListNotes from './Notes/List'
+import './App.css';
 
 function App() {
-  const baseUrl = "https://localhost:7015/api/Notes";
-  const [data, setData] = useState([]);
+  const [theme, setTheme] = useState('dark');
+  const buttonClass = theme === 'dark' ? 'btn btn-outline-warning' : 'btn btn-outline-dark';
+  const buttonTheme = theme === 'dark' ? 'Tema Claro' : 'Tema Escuro';
 
-  const requestGet = async()=>
-  {
-    await axios.get(baseUrl).then(response => 
-      {
-        setData(response.data);
-      }).catch(error => {
-        console.error(error)
-      }); 
-  }
 
-  useEffect(() => {
-    requestGet();
-  })
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Notes Table</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Post Date</th>
-              <th>Validity</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map(note => (
-              <tr key={note.id}>
-                <td>{note.id}</td>
-                <td>{note.Name}</td>
-                <td>{note.description}</td>
-                <td>{note.postDate}</td>
-                <td>{note.validity}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className={`App ${theme}`}>
+      <header>
+        <div className='logo-container'>
+          <img className='logo-img' src={Logo} alt="Logo" />
+        </div>
+        <button className={buttonClass} onClick={toggleTheme}>{buttonTheme}</button>
       </header>
+      <HomePage />
+      <ListNotes />
     </div>
   );
 }
