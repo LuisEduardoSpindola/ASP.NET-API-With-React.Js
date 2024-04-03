@@ -21,11 +21,46 @@ header {
 
 
 .light {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(236, 253, 219);
   color: black;
 }
 
 .dark {
   background-color: rgb(38, 35, 56);
   color: white;
+}
+
+/* App.css */
+
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  width: 80%; /* ajuste conforme necessário */
+  margin-top: 100px; /* ajuste conforme necessário */
+  margin-left: 200px;
+}
+
+.home-container,
+.notes-container {
+  flex-basis: 45%; /* ajuste conforme necessário */
+}
+
+.notes-container
+{
+  margin-top: 80px;
+  margin-left: 130px;
+}
+
+/* Estilos para tela menor */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    width: 100%; /* ajuste conforme necessário */
+  }
+
+  .home-container,
+  .notes-container {
+    width: 100%;
+  }
 }

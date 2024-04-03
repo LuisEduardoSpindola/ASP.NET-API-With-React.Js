@@ -1,0 +1,15 @@
+table, th, td
+{
+    border: 1.4px solid rgb(45, 184, 45);
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    text-align: center; 
+}
+
+.container
+{
+    justify-content: center;
+    display: flex;
+}
